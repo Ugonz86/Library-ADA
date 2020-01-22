@@ -1,0 +1,36 @@
+
+
+body {
+  margin: 0 auto;
+  /* max-width: 1200px; */
+  background-color: transparent;
+  text-align: center;
+  letter-spacing: 2px;
+  
+}
+
+.header1 {
+  text-align: right;
+  margin-top: 5px;
+  margin-right: 5px;
+  color: black;
+}
+.body {
+   margin-top: 400px;
+}
+
+
+.logOut {
+  margin-top: 2px;;
+}
+
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  background:black;
+  padding:8px;
+  text-align: center;
+}

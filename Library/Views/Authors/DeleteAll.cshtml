@@ -1,0 +1,19 @@
+
+@{
+  Layout = "_Layout";
+}
+
+@model List<Library.Models.Author>;
+
+<h2>Are you sure you want to delete all authors?</h2>
+<br>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="DeleteAll" />
+}
+
+<br>
+<br>
+@Html.ActionLink("Back to authors", "Index")
+

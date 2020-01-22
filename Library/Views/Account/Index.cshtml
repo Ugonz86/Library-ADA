@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+@using System.Security.Claims
+<h1><b>Library</b></h1>
+<br>
+<h1>Authentication with Identity</h1>
+<br>
+@if (User.Identity.IsAuthenticated)
+{
+    <h3>Hello @User.Identity.Name!</h3>
+    <br>
+}
+else
+{
+    <h4>@Html.ActionLink("Register", "Register")</h4>
+    <h4>@Html.ActionLink("Log in", "Login")</h4>
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <h4>@Html.ActionLink("Library Overview", "Index", "Home")</h4>
+}
