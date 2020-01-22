@@ -1,6 +1,6 @@
-# TO DO LIST 
+# Library
 
-####  C# and .NET Advanced Databases and Authentication - _01/21/2020_
+####  C# and .NET Advanced Databases and Authentication - _01/22/2020_
 
 #### _By **Uriel Gonzalez**_
 
@@ -8,10 +8,11 @@
 
 DETAILED DESCRIPTION
 
-### Specs
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
-| **BEHAVIOR** | INPUT | OUTPUT |
+The user can:
+
+Add, view, edit, search and delete one or multiple authors.
+Add, view, edit, search and delete one or multiple books.
+The user can check-in / check-out.
 
 ## Setup/Installation Requirements
 
@@ -28,11 +29,11 @@ DETAILED DESCRIPTION
 ```sh
 1. mysql start
 2. Access MySql by executing the command: `mysql -uroot -pepicodus`
-3. CREATE DATABASE `to_do_list`
-4. USE `to_do_list`
-5. CREATE TABLE `Categories` (`CategoryId` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(255) DEFAULT NULL, PRIMARY KEY (`CategoryId`))
-6. CREATE TABLE `Items` (`ItemId` int(11) NOT NULL AUTO_INCREMENT, `Description` varchar(255), `UserId` int(11), PRIMARY KEY (`ItemId`))
-7. CREATE TABLE `CategoryItem` (`CategoryItemId` int(11) NOT NULL AUTO_INCREMENT, `ItemId` int(11) NOT NULL, `CategoryId` int(11) NOT NULL, PRIMARY KEY (`CategoryItemId`))
+3. CREATE DATABASE `library`
+4. USE `library`
+5. CREATE TABLE `Authors` (`AuthorsId` int(11) NOT NULL AUTO_INCREMENT, `Name` varchar(255) DEFAULT NULL, PRIMARY KEY (`AuthorId`))
+6. CREATE TABLE `Books` (`BookId` int(11) NOT NULL AUTO_INCREMENT, `Description` varchar(255), `UserId` int(11), PRIMARY KEY (`BookId`))
+7. CREATE TABLE `AuthorBook` (`AuthorBookId` int(11) NOT NULL AUTO_INCREMENT, `BookId` int(11) NOT NULL, `AuthorId` int(11) NOT NULL, PRIMARY KEY (`AuthorBookId`))
 8. Run program with dotnet run (or $ dotnet watch run).
 
 ```
