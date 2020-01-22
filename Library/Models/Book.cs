@@ -11,7 +11,10 @@ namespace Library.Models
 
         public int BookId { get; set; }
         public string Description { get; set; }
-        public virtual ApplicationUser User { get; set; } //new line
+        public int AuthorId { get; set; } 
+        public virtual Author Author { get; set; }
+        public virtual ApplicationUser User { get; set; } 
+        // public bool isChecked = false;
 
         public ICollection<AuthorBook> Authors { get;}
     }

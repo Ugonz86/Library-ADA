@@ -8,20 +8,27 @@
 <h1>Books for @User.Identity.Name</h1>
 <br>
 
+<form asp-controller="Books" asp-action="Index">
+    <p>
+        <i class="fa fa-search"></i> <input type="text" class="searchBar" name="SearchBook" placeholder="Find Book">
+    </p>
+</form>
+<br>
+
 @if (Model.Any())
 {
   
     @foreach (Book book in Model)
     {
-      @Html.ActionLink($"{book.Description}", "Details", new { id = book.BookId })
+      <h3>@Html.ActionLink($"{book.Description}", "Details", new { id = book.BookId })</h3>
     }
-  <br>
+  
 } 
 else
 {
   <h3>No books have been added yet!</h3>
 }
 <br>
-<p>@Html.ActionLink("Add new book", "Create")</p>
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<h4>@Html.ActionLink("Make Reservation", "Create", "Reservations")</h4>
+<h4>@Html.ActionLink("Add new book", "Create")</p>
+<h4>@Html.ActionLink("Home", "Index", "Home")</p>

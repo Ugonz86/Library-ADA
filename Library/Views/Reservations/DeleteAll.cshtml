@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+@model List<Library.Models.Reservation>;
+
+<h2>Are you sure you want to delete all reservations?</h2>
+<br>
+
+@using (Html.BeginForm())
+{
+    <button class="btn btn-success" type="submit" value="DeleteAll">Delete All Reservations</button>
+}
+
+<hr>
+<h4>@Html.ActionLink("Reservation Overview", "Index")</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

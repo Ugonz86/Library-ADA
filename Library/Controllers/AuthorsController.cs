@@ -15,9 +15,12 @@ namespace Library.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string SearchAuthor)
     {
       List<Author> model = _db.Authors.ToList();
+      if(SearchAuthor!=null){
+                model = _db.Authors.Where(author => author.Name.Contains(SearchAuthor)).ToList();
+            }
       return View(model);
     }
 

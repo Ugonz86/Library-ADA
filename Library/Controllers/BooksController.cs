@@ -27,12 +27,17 @@ namespace Library.Controllers
     }
 
     //updated Index method
-    public async Task<ActionResult> Index()
+    public async Task<ActionResult> Index(string SearchBook)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
       var userBooks = _db.Books.Where(entry => entry.User.Id == currentUser.Id);
-      return View(userBooks);
+      List<Book> model = _db.Books.Include(books => books.Author).ToList();
+      if(SearchBook!=null) {
+        model = _db.Books.Where(books => books.Description.Contains(SearchBook)).ToList();
+      }
+      return View(model);
+      
     }
 
     public ActionResult Create()
@@ -126,5 +131,17 @@ namespace Library.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    // public ActionResult CheckOut(int id)
+    // {
+    //   List<Book> booklist = _db.Books.OrderBy(Book => Book.isChecked);
+    //   return View();
+    // }
+
+    //  [HttpPost, ActionName("CheckOut")]
+    //  public ActionResult CheckOutConfirmed(int id)
+    //  {
+    //    return RedirectToAction("Index");
+    //  }
   }
-}
+} 

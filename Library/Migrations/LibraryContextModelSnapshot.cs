@@ -102,15 +102,39 @@ namespace Library.Migrations
                     b.Property<int>("BookId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AuthorId");
+
                     b.Property<string>("Description");
 
                     b.Property<string>("UserId");
 
                     b.HasKey("BookId");
 
+                    b.HasIndex("AuthorId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("Library.Models.Reservation", b =>
+                {
+                    b.Property<int>("ReservationId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AuthorId");
+
+                    b.Property<int>("BookId");
+
+                    b.Property<DateTime>("DateTime");
+
+                    b.HasKey("ReservationId");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -235,9 +259,27 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Models.Book", b =>
                 {
+                    b.HasOne("Library.Models.Author", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Library.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Library.Models.Reservation", b =>
+                {
+                    b.HasOne("Library.Models.Author", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Library.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
