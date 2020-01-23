@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20200122200200_addIdentity")]
+    [Migration("20200123173703_addIdentity")]
     partial class addIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -129,6 +129,8 @@ namespace Library.Migrations
                     b.Property<int>("BookId");
 
                     b.Property<DateTime>("DateTime");
+
+                    b.Property<int>("Quantity");
 
                     b.HasKey("ReservationId");
 

@@ -1,16 +1,16 @@
 @{
   Layout = "_Layout";
 }
-
 @model Library.Models.Book
 
-<h2>Book Details</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+<h1>Book Details</h1>
+<br>
+<h3><b>@Html.DisplayFor(model => model.Description)</b></h3>
+<br>
 
 @if(@Model.Authors.Count == 0)
 {
-  <p>This book does not belong to any authors</p>
+  <h4>This book does not belong to any authors</h4>
 }
 else
 {
@@ -18,19 +18,18 @@ else
   
   @foreach(var join in Model.Authors)
   {
-    @join.Author.Name
+    <h3><b>@join.Author.Name</b></h3>
     @using (Html.BeginForm("DeleteAuthor", "Books"))
     {
       @Html.Hidden("joinId", @join.AuthorBookId)
       <input type="submit" value="Delete"/>
     }
+    <br>
   }
-
 }
 <br>
-
-<p>@Html.ActionLink("Check Out this book", "Create", "Reservations")</p>
-<p>@Html.ActionLink("Edit Book", "Edit", new { id = Model.BookId })</p>
-<p>@Html.ActionLink("Add an Author", "AddAuthor", new { id = Model.BookId })</p>
-<p>@Html.ActionLink("Delete Book", "Delete", new { id = Model.BookId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<h4>@Html.ActionLink("Check Out this book", "Create", "Reservations")</h4>
+<h4>@Html.ActionLink("Edit Book", "Edit", new { id = Model.BookId })</h4>
+<h4>@Html.ActionLink("Add an Author", "AddAuthor", new { id = Model.BookId })</h4>
+<h4>@Html.ActionLink("Delete Book", "Delete", new { id = Model.BookId })</h4>
+<h4>@Html.ActionLink("Back to list", "Index")</h4>

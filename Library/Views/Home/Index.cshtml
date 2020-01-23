@@ -6,7 +6,7 @@
 
 @model IEnumerable<Library.Models.Book>
 
-<h1>Welcome to Seattle's New Online library!</h1>
+  <b><h1>Welcome to Seattle's New Online library!</h1></b>
 <br>
 
 @if (User.Identity.IsAuthenticated)
@@ -14,12 +14,7 @@
 
   <h3>@Html.ActionLink("See all authors", "Index", "Authors")</h3>
   <h3>@Html.ActionLink("See all books", "Index", "Books")</h3>
-  
-@* <form asp-controller="Books" asp-action="Index">
-    <p>
-        <i class="fa fa-search"></i> <input type="text" class="searchBar" name="SearchBook" placeholder="Find Book">
-    </p>
-</form> *@
+  <br>
 
 }
 else

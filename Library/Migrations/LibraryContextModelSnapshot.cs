@@ -128,6 +128,8 @@ namespace Library.Migrations
 
                     b.Property<DateTime>("DateTime");
 
+                    b.Property<int>("Quantity");
+
                     b.HasKey("ReservationId");
 
                     b.HasIndex("AuthorId");

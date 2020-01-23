@@ -5,14 +5,8 @@
 @using Library.Models;
 @model IEnumerable<Library.Models.Book>
 
-<h1>Books for @User.Identity.Name</h1>
-<br>
-
-<form asp-controller="Books" asp-action="Index">
-    <p>
-        <i class="fa fa-search"></i> <input type="text" class="searchBar" name="SearchBook" placeholder="Find Book">
-    </p>
-</form>
+@* <h1>Books for @User.Identity.Name</h1> *@
+<h1>Your Book Selection</h1>
 <br>
 
 @if (Model.Any())
@@ -30,5 +24,5 @@ else
 }
 <br>
 <h4>@Html.ActionLink("Make Reservation", "Create", "Reservations")</h4>
-<h4>@Html.ActionLink("Add new book", "Create")</p>
-<h4>@Html.ActionLink("Home", "Index", "Home")</p>
+<h4>@Html.ActionLink("Add new book", "Create")</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

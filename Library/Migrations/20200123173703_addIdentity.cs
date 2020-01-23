@@ -227,7 +227,8 @@ namespace Library.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     BookId = table.Column<int>(nullable: false),
                     AuthorId = table.Column<int>(nullable: false),
-                    DateTime = table.Column<DateTime>(nullable: false)
+                    DateTime = table.Column<DateTime>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <div class="header">
-      @Html.Partial("Header")
-    </div>
+    @Html.Partial("Header")
+    
     <div class="body">
-      @RenderBody()
+      <div class="container">
+        @RenderBody()
+      </div>
     </div>
+    
     @Html.Partial("Footer")
   </body>
 </html>
