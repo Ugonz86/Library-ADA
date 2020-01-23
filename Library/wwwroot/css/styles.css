@@ -11,12 +11,13 @@ body {
 
 .header1 {
   text-align: right;
-  margin-top: 5px;
-  margin-right: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
   color: black;
 }
 .body {
    margin-top: 400px;
+   text-align: center;
 }
 
 
@@ -29,12 +30,35 @@ div#footer {
   bottom:0px;
   left:0px;
   width:100%;
-  color:#CCC;
-  background:black;
+  color:black;
+  background-color:#d6b213;
   padding:8px;
   text-align: center;
 }
 
 .fa-search {
   color: black;
+}
+
+.form-control {
+  width: 230px;
+}
+
+a {
+  color: #d6b213;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff4d00;
+}
+
+input {
+  background-color:  #d6b213;
+  border-radius: 5px;
+  border: none;
+}
+
+input:hover {
+  background-color: #ff4d00;
 }

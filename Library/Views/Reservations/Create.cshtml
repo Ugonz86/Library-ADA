@@ -4,7 +4,7 @@
 @model Library.Models.Reservation
 <h2>New Reservation</h2>
 <hr>
-
+<center>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Author)
@@ -15,11 +15,17 @@
     
     <br>
     @Html.LabelFor(model => model.DateTime, "Date & Time")
-    @Html.EditorFor(model => model.DateTime, new { htmlAttributes = new {@class = "form-control multi-line textBox"}})
+    @Html.EditorFor(model => model.DateTime, new { htmlAttributes = new {@class = "form-control multi-line"}})
     <br>
+
+    @Html.LabelFor(model => model.Quantity, "Quantity")
+    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new {@class = "form-control multi-line"}})
+  <br>
     <button class="btn btn-success" type="submit" value="Submit!" class="btn btn-default">Submit</button>
 }
 
 <hr />
 <h4>@Html.ActionLink("Reservations Overview", "Index")</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>
+
+</center>
