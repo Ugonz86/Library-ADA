@@ -15,7 +15,7 @@ namespace Library.Controllers
             _db = db;
         }
 
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
             List<Reservation> model = _db.Reservations.Include(books => books.Author).ToList();
             return View(model);

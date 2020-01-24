@@ -6,14 +6,21 @@
 
 @model IEnumerable<Library.Models.Book>
 
-  <b><h1>Welcome to Seattle's New Online library!</h1></b>
+  <b><h1>Welcome to my Online Library!</h1></b>
 <br>
 
 @if (User.Identity.IsAuthenticated)
 {
-
-  <h3>@Html.ActionLink("See all authors", "Index", "Authors")</h3>
-  <h3>@Html.ActionLink("See all books", "Index", "Books")</h3>
+  <div class="intro">
+    <div class="iLeft">
+      @Html.ActionLink("Authors", "Index", "Authors")
+    </div>
+    <div class="iRight">
+      @Html.ActionLink("Books", "Index", "Books")
+    </div>
+    
+  </div>
+  
   <br>
 
 }

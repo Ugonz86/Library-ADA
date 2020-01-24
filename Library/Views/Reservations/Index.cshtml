@@ -5,8 +5,8 @@
 
 @using Library.Models;
 @model List<Library.Models.Reservation>
-<h2>Book Check Out Overview</h2>
-<hr>
+<h1>Book Check Out Overview</h1>
+<br>
 
 @if (@Model.Count == 0)
 {
@@ -16,10 +16,10 @@
 @foreach (Reservation newReservation in Model)
 {
   <h3>@Html.ActionLink($"{newReservation.DateTime}", "Details", new { id = newReservation.DateTime}, new { id = newReservation.ReservationId }) | Author: @Html.ActionLink($"{newReservation.Author.Name}", "Details", "Authors", new { id = newReservation.AuthorId }) | Copies: @Html.ActionLink($"{newReservation.Quantity}", "Details", new { id = newReservation.Quantity})</h3>
-  @* Book: @Html.ActionLink($"{newReservation.Book.Description}", "Details", "Books", new { id = newReservation.Author.BookId }) *@
+  @* Book: @Html.ActionLink($"{newReservation.Book.Description}", "Details", "Books", new { id = newReservation.BookId }) *@
 }
 
-<hr />
+<br>
 <h4>@Html.ActionLink("Check Out", "Create")</h4>
 <h4>@Html.ActionLink("Delete List", "DeleteAll")</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>
