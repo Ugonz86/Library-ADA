@@ -83,6 +83,9 @@ body {
   background-color: transparent;
   width: 200px;
 }
+.searchBar:hover {
+  background-color: transparent;
+}
 
 div#footer {
   position:fixed;
@@ -106,7 +109,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #ff4d00;
+  color: #7a6400;
 }
 
 input {
@@ -128,13 +131,14 @@ button {
 }
 
 button:hover {
-  background-color: #ff4d00;
+  background-color: #7a6400;
 }
 
 button:focus {outline:none;}
 
 input:hover {
-  background-color: #ff4d00;
+  background-color: #7a6400;
+  color: white;
 }
 
 input:focus {outline:none;}

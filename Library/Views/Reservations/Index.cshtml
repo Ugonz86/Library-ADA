@@ -15,8 +15,8 @@
 
 @foreach (Reservation newReservation in Model)
 {
-  <h3>@Html.ActionLink($"{newReservation.DateTime}", "Details", new { id = newReservation.DateTime}, new { id = newReservation.ReservationId }) | Author: @Html.ActionLink($"{newReservation.Author.Name}", "Details", "Authors", new { id = newReservation.AuthorId }) | Copies: @Html.ActionLink($"{newReservation.Quantity}", "Details", new { id = newReservation.Quantity})</h3>
-  @* Book: @Html.ActionLink($"{newReservation.Book.Description}", "Details", "Books", new { id = newReservation.BookId }) *@
+  <h3>@Html.ActionLink($"{newReservation.DateTime}", "Details", new { id = newReservation.DateTime}, new { id = newReservation.ReservationId }) | Author: @Html.ActionLink($"{newReservation.Author.Name}", "Details", "Authors", new { id = newReservation.AuthorId }) |  Book: @Html.ActionLink($"{newReservation.Book.Description}", "Details", "Books", new { id = newReservation.BookId }) | Copies: @Html.ActionLink($"{newReservation.Quantity}", "Details", new { id = newReservation.Quantity})</h3>
+ 
 }
 
 <br>

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20200123173711_Authorization")]
+    [Migration("20200124063821_Authorization")]
     partial class Authorization
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
